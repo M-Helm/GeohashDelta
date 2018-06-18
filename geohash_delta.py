@@ -68,6 +68,6 @@ class GeohashDelta():
 
 
 if __name__ == '__main__':
-    # including this a simple test output = 6347.58901343
+    # including this as a simple test output = 6347.58901343
     gd = GeohashDelta()
     print gd.delta('dn5bpxd', 'djupbqe')
