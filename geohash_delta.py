@@ -12,13 +12,17 @@ class GeohashDelta():
     __base32 = '0123456789bcdefghjkmnpqrstuvwxyz'
     __decodemap = {}
 
-    def __init__(self, hash1, hash2):
+    def __init__(self):
         """."""
         for i in range(len(self.__base32)):
             self.__decodemap[self.__base32[i]] = i
+        return None
+
+    def delta(self, hash1, hash2):
+        """Return the difference in meters of two geohases."""
         lat1, lon1, lat_err1, lon_err1 = self.__decode(hash1)
         lat2, lon2, lat_err2, lon_err2 = self.__decode(hash2)
-        print self.__haversine(lat1, lon1, lat2, lon2)
+        return self.__haversine(lat1, lon1, lat2, lon2)
 
     def __decode(self, geohash):
         """Decode the geohash to values plus error margins."""
@@ -64,4 +68,6 @@ class GeohashDelta():
 
 
 if __name__ == '__main__':
-    gd = GeohashDelta('dn5bpxd', 'djupbqe')
+    # including this a simple test output = 6347.58901343
+    gd = GeohashDelta()
+    print gd.delta('dn5bpxd', 'djupbqe')

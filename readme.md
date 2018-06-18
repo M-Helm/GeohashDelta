@@ -1,5 +1,8 @@
-Returns distance in meters between two geohashes. 
+Returns distance in meters between two geohashes.
 
-USAGE: >>>GeohashDelta(hash1, hash2)
+USAGE:
+>>>from geohash_delta import GeohashDelta
+>>>gd = GeohashDelta()
+>>>print gd(hash1, hash2)
 
 helm@sawatchgroup.com
